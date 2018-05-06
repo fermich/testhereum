@@ -1,0 +1,33 @@
+-- create accounts:
+> for(var i=0;i<2;i++) personal.newAccount('password')
+
+-- list accounts:
+> eth.accounts
+> personal.listAccounts
+
+-- set primary account to "0xacc"
+> miner.setEtherbase("0xacc")
+
+-- start/stop mining on behalf of primary account
+> miner.start()
+> miner.stop()
+
+-- check account balance
+> eth.getBalance("0xf875cb26a76aa63ea2a6f7d5a5c7a52d58ab887b")
+
+-- latest block number:
+> eth.blockNumber
+
+-- unlock accounts to send some funds:
+> personal.unlockAccount(accounts[0], '')
+> personal.unlockAccount("0xf875cb26a76aa63ea2a6f7d5a5c7a52d58ab887b", "pass")
+
+-- send funds:
+> eth.sendTransaction({from: "0x808cdaf8a2882950a22abc04baa012a757a5f2e3", to: "0xf875cb26a76aa63ea2a6f7d5a5c7a52d58ab887b", value: 666}) 
+
+-- get block details:
+> web3.eth.getBlock("latest")
+> web3.eth.getBlock("hash")
+> web3.eth.getBlock(666)
+
+
